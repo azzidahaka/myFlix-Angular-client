@@ -5,6 +5,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
+this.router.navigate(['movies']);
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
