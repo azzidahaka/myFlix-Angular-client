@@ -9,7 +9,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'YOUR_HOSTED_API_URL_HERE/';
+const apiUrl = 'https://the-movies-flix-a42e388950f3.herokuapp.com/';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +19,7 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log(typeof userDetails.Birthday);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
@@ -27,7 +27,7 @@ export class FetchApiDataService {
 
   //User Login
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log(userDetails)
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       map((response: any) => {
         if (response.token) {
