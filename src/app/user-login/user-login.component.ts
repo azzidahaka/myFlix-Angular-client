@@ -14,7 +14,7 @@ this.router.navigate(['movies']);
   styleUrls: ['./user-login.component.scss'],
 })
 export class UserLoginComponent implements OnInit {
-  @Input() user = { Username: '', Password: '' };
+  @Input() user = { UserName: '', Password: '' };
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -31,6 +31,7 @@ export class UserLoginComponent implements OnInit {
         this.snackBar.open(result, 'login successfull', {
           duration: 2000,
         });
+        localStorage.setItem('user', JSON.stringify(this.user));
       },
       (result) => {
         this.snackBar.open(result, 'OK', {
