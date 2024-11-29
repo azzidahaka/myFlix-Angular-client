@@ -28,9 +28,16 @@ export class FetchApiDataService {
   //User Login
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
-    return this.http
-      .post(apiUrl + 'login', userDetails)
-      .pipe(catchError(this.handleError));
+    return this.http.post(apiUrl + 'login', userDetails).pipe(
+      map((response: any) => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('user', userDetails);
+        }
+        return response;
+      }),
+      catchError(this.handleError)
+    );
   }
 
   // Get all movies
