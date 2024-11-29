@@ -28,6 +28,7 @@ export class UserLoginComponent implements OnInit {
         this.snackBar.open(result, 'login successfull', {
           duration: 2000,
         });
+        localStorage.setItem('user', JSON.stringify(this.user));
       },
       (result) => {
         this.snackBar.open(result, 'OK', {
