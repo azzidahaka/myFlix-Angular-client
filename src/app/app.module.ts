@@ -28,7 +28,13 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent, UserLoginComponent, MovieCardComponent, WelcomePageComponent],
+  declarations: [
+    AppComponent,
+    UserRegistrationFormComponent,
+    UserLoginComponent,
+    MovieCardComponent,
+    WelcomePageComponent,
+  ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
@@ -37,6 +43,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatIconModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,

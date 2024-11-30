@@ -7,7 +7,6 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-this.router.navigate(['movies']);
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -19,7 +18,8 @@ export class UserLoginComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -32,6 +32,7 @@ export class UserLoginComponent implements OnInit {
           duration: 2000,
         });
         localStorage.setItem('user', JSON.stringify(this.user));
+        this.router.navigate(['movies']);
       },
       (result) => {
         this.snackBar.open(result, 'OK', {
