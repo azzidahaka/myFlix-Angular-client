@@ -19,7 +19,6 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(typeof userDetails.Birthday);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
@@ -27,7 +26,6 @@ export class FetchApiDataService {
 
   //User Login
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       map((response: any) => {
         if (response.token) {
