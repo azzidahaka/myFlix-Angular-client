@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatIconModule } from '@angular/material/icon';
 
-
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
