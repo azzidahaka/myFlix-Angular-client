@@ -32,7 +32,7 @@ export class UserLoginComponent implements OnInit {
         this.snackBar.open('login successfull', '', {
           duration: 2000,
         });
-        localStorage.setItem('user', JSON.stringify(this.user));
+        localStorage.setItem('user', JSON.stringify(result.user));
         this.router.navigate(['movies']);
       },
       (result) => {

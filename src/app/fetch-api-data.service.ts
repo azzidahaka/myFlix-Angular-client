@@ -97,18 +97,6 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get user favorite movies
-  getFavoriteMovies(username: string): Observable<any> {
-    const token = localStorage.getItem('token');
-    return this.http
-      .get(apiUrl + `users/${username}/movies`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
-  }
-
   //add favorite movie
   addFavoriteMovie(username: string, movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
@@ -125,7 +113,7 @@ export class FetchApiDataService {
   editUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .put(apiUrl + `users/${userDetails.userName}`, userDetails, {
+      .put(apiUrl + `users/${userDetails.UserName}`, userDetails, {
         headers: new HttpHeaders().set('Authorization', `Bearer ${token}`),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
@@ -163,7 +151,8 @@ export class FetchApiDataService {
       console.error('Some error occurred:', error.error.message);
     } else {
       console.error(
-        `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
+        `Error Status code ${error.status}, ` +
+          `Error body is: ${JSON.stringify(error.error)}`
       );
     }
     return throwError('Something bad happened; please try again later.');
