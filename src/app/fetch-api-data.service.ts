@@ -100,12 +100,17 @@ export class FetchApiDataService {
   //add favorite movie
   addFavoriteMovie(username: string, movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log('Token:', token);
     return this.http
-      .post(apiUrl + `users/${username}/movies/${movieId}`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
+      .post(
+        apiUrl + `users/${username}/movies/${movieId}`,
+        {},
+        {
+          headers: new HttpHeaders({
+            Authorization: 'Bearer ' + token,
+          }),
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
