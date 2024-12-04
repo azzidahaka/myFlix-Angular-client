@@ -14,6 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
@@ -48,6 +50,8 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,

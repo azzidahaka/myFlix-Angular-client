@@ -1,0 +1,17 @@
+.main-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+h1 {
+  justify-self: center;
+  align-self: center;
+  font-size: 5rem;
+}
+button {
+  justify-self: center;
+  align-self: center;
+}
