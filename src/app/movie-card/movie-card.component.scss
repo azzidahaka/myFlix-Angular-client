@@ -8,8 +8,8 @@
 }
 
 .movie-card {
-  flex: 1 1 50%;
-  max-width: 300px;
+  flex: 1 1;
+  max-width: 265px;
   margin: 10px;
   height: 500px; // Adjust height as needed
   align-items: center;
@@ -20,12 +20,6 @@
   overflow: hidden; // Hide overflow text
 }
 
-// .card-title {
-//   white-space: nowrap; // Prevent text from wrapping
-//   overflow: hidden; // Hide overflow text
-//   text-overflow: ellipsis; // Add ellipsis for overflow text
-// }
-
 .card-subtitle {
   white-space: nowrap; // Prevent text from wrapping
   overflow: hidden; // Hide overflow text
@@ -35,7 +29,6 @@
 .card-image {
   height: 340px;
   width: 240px;
-  //   margin: 0 30px;
-
   object-fit: cover; // Ensure the image covers the area without distortion
 }
+

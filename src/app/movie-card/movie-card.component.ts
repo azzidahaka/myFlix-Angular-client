@@ -88,7 +88,8 @@ export class MovieCardComponent implements OnInit {
     console.log('genre', movie.Genre.Description);
     this.dialog.open(DialogBoxComponent, {
       data: {
-        title: movie.Genre.Name,
+        title: 'Movie Information',
+        name: movie.Genre.Name,
         description: movie.Genre.Description,
         type: 'genre',
       },

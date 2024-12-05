@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-// You'll use this import to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
-// This import brings in the API calls we created in 6.2
 import { FetchApiDataService } from '../fetch-api-data.service';
-// This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -24,12 +21,12 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Send  login input to backend
+  // Send login input to backend
   loginUser(): void {
     this.fetchApiData.userLogin(this.user).subscribe(
       (result) => {
         this.dialogRef.close();
-        this.snackBar.open('login successfull', '', {
+        this.snackBar.open('Login successful', '', {
           duration: 2000,
         });
         localStorage.setItem('user', JSON.stringify(result.user));

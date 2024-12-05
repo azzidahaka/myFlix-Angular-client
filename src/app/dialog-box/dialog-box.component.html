@@ -2,16 +2,14 @@
 <div mat-dialog-content>
   <ng-container [ngSwitch]="data.type">
     <div *ngSwitchCase="'genre'">
-      <p><strong>Genre:</strong> {{ data.title }}</p>
+      <p><strong>Genre:</strong> {{ data.name }}</p>
       <p><strong>Description:</strong> {{ data.description }}</p>
     </div>
     <div *ngSwitchCase="'director'">
       <p><strong>Name:</strong> {{ data.name }}</p>
       <p><strong>Bio:</strong> {{ data.bio }}</p>
       <p><strong>Birth:</strong> {{ data.birth }}</p>
-      <p *ngIf="data.director.Death">
-        <strong>Death:</strong> {{ data.Death }}
-      </p>
+      <p><strong>Death:</strong> {{ data.death }}</p>
     </div>
     <div *ngSwitchCase="'Description'">
       <p>{{ data.synopsis }}</p>
