@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginComponent } from '../user-login/user-login.component';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-page',
@@ -9,8 +10,10 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./welcome-page.component.scss'],
 })
 export class WelcomePageComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
-  ngOnInit(): void {}
+  constructor(public dialog: MatDialog, private router: Router) {}
+  ngOnInit(): void {
+    this.router.navigate(['movies']);
+  }
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '280px',
