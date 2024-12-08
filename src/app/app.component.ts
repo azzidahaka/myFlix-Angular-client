@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'myFlix-Angular-client';
-  showMenuBar = false;
+  showMenuBar = true;
 
   constructor(private router: Router) {}
 
@@ -23,6 +23,14 @@ export class AppComponent {
       .subscribe((event: NavigationEnd) => {
         this.showMenuBar = event.url !== '/welcome';
       });
+    // Check the initial route after a short delay to ensure the router is ready
+    setTimeout(() => {
+      this.checkRoute(this.router.url);
+    }, 0);
+  }
+
+  checkRoute(url: string): void {
+    this.showMenuBar = url !== '/welcome';
   }
 
   navigateTo(route: string): void {
