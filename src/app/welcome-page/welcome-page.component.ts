@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class WelcomePageComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router) {}
   ngOnInit(): void {
-    this.router.navigate(['movies']);
+    this.router.navigate(['welcome']);
   }
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {

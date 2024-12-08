@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'myFlix-Angular-client';
-  showMenuBar = true;
+  showMenuBar = false;
 
   constructor(private router: Router) {}
 
